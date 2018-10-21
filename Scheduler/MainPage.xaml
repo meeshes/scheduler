@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="Scheduler.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Scheduler"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Pivot Title="Scheduler">
+        <PivotItem Header="Schedule">
+        </PivotItem>
+        <PivotItem Header="People" HorizontalAlignment="Left" Margin="12,0,0,0" VerticalAlignment="Stretch" Width="1476">
+            <RelativePanel Height="Auto" Margin="0,31,0,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="Auto">
+                <TextBox Name="FName" PlaceholderText="First Name" Width="200" FontSize="30" HorizontalAlignment="Left" RenderTransformOrigin="1.163,0.642"/>
+                <TextBox Name="LName" PlaceholderText="Last Name" Width="200" FontSize="30" Margin="319,0,-345,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <ComboBox Name="PrimaryTeam" PlaceholderText="Teams" FontSize="30" Width="200" RelativePanel.Below="FName" SelectionChanged="ComboBox_SelectionChanged" Margin="0,25,0,0" VerticalAlignment="Top"/>
+                <ListBox Name="SecondaryTeams" RelativePanel.Below="PrimaryTeam" Height="100" Width="1476" Margin="0,25,0,0"/>
+                <TextBox Name="MinHours" PlaceholderText="Min Hours" FontSize="30" Width="200" InputScope="Number" RelativePanel.Below="SecondaryTeams" Margin="0,25,0,0"/>
+                <TextBox Name="MaxHours" PlaceholderText="Max Hours" FontSize="30" Width="200" InputScope="Number" RelativePanel.Below="SecondaryTeams" RelativePanel.RightOf="MinHours" Margin="119,25,-119,0"/>
+                <TextBlock Name="PreferedDaysHeader" FontSize="30" HorizontalAlignment="Center" Text="Prefered Work Days" TextWrapping="Wrap" Width="Auto" RelativePanel.Below="MinHours" Margin="0,25,0,0"/>
+                <ListBox Name="PreferedDays" HorizontalContentAlignment="Center" RelativePanel.Below="PreferedDaysHeader" Height="Auto" Width="200" Margin="0,0,0,0">
+                    <ListBoxItem>Sunday</ListBoxItem>
+                    <ListBoxItem>Monday</ListBoxItem>
+                    <ListBoxItem>Tuesday</ListBoxItem>
+                    <ListBoxItem>Wednesday</ListBoxItem>
+                    <ListBoxItem>Thursday</ListBoxItem>
+                    <ListBoxItem>Friday</ListBoxItem>
+                    <ListBoxItem>Saturday</ListBoxItem>
+                </ListBox>
+            </RelativePanel>
+        </PivotItem>
+    </Pivot>
+</Page>
